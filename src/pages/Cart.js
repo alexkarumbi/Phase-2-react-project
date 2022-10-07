@@ -8,8 +8,8 @@ const Cart = () => {
 
   const [products, setProducts] = useState([]);
 
-  const [priceFetched, setPriceFetched] = useState(false);
-  // console.log("helllo", cart);
+  const [priceFetched, setPriceFetched ,isChecked] = useState(false);
+ 
 
   const getSum = (productId, price) => {
     const sum = price * getQty(productId);
@@ -77,7 +77,25 @@ const Cart = () => {
     setProducts(updatedProductsList);
   };
 
+   let handleDelivery =(event)=>{
+    if (event.target.checked){
+   
+      total +=200
+      
+      
+    
+      console.log("working");
+    }else{
+      console.log("error");
+    }
+    
+   }
+
+
+
   const handleOrderNow = () => {
+
+  
 
     let location =window.prompt("Please enter location for delivery");
     
@@ -137,7 +155,16 @@ const Cart = () => {
 
       <hr className="my-6" />
 
-      <div className="text-right font-bold"> Grand Total : Ksh {total} </div>
+      <div className="text-right font-bold"> 
+      
+      
+      <label for="delivery"><input type="checkbox" id="delivery" name="delivery" value = {isChecked} onChange={handleDelivery}>
+           
+      </input> Delivery :For an extra fee of Ksh.200</label>
+     
+      <p>Grand Total : Ksh {total}</p>
+      
+       </div>
       <div className="text-right font-bold mt-6">
         <button
           className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
@@ -145,6 +172,10 @@ const Cart = () => {
         >
           Order Now
         </button>
+         
+        
+      
+        
       </div>
     </div>
   ) : (
