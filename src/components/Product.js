@@ -49,7 +49,7 @@ const Product = (props) => {
         </div>
 
         <div className="flex justify-between items-center mt-4">
-          <span>₹ {product.price}</span>
+          <span>Ksh. {product.price}</span>
           <button
             disabled={isAdding}
             className={`${
