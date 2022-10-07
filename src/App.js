@@ -1,23 +1,44 @@
-import React from 'react'
-import { useGlobalContext } from './Context';
-import Navbar from './Navbar';
-import PizzaContainer from './PizzaContainer';
+import React, { useEffect, useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
+import Navigation from "./components/Navigation";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import SingleProduct from "./pages/SingleProduct";
+import { getCart, storeCart } from "./helpers";
 
-function App() {
-  const loading= useGlobalContext()
-  if (loading) {
-    return (
-      <div className='loading'>
-        <h1>Loading...</h1>
-      </div>
-    )
-  }
+const App = () => {
+  const [cart, setCart] = useState({});
+
+  useEffect(() => {
+    getCart().then((cart) => {
+      setCart(JSON.parse(cart));
+    });
+  }, []);
+
+  useEffect(() => {
+    storeCart(JSON.stringify(cart));
+  }, [cart]);
+
   return (
-    <main>
-      <Navbar />
-      <PizzaContainer />
-    </main>
-  )
-}
+    <>
+      <CartContext.Provider value={{ cart, setCart }}>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
 
-export default App
+          <Route path="/products" element={<Products />}></Route>
+          <Route
+            path="/products/:_id"
+            exact
+            element={<SingleProduct />}
+          ></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+        </Routes>
+      </CartContext.Provider>
+    </>
+  );
+};
+
+export default App;
