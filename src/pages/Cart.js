@@ -78,7 +78,10 @@ const Cart = () => {
   };
 
   const handleOrderNow = () => {
-    window.alert("Order placed succesfully !");
+
+    let location =window.prompt("Please enter location for delivery");
+    
+    window.alert( "Order placed succesfully, it will be delivered to " +location );
     setProducts([]);
     setCart({});
   };
