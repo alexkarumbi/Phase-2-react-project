@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/Phase-2-react-project/static/css/main.31d6cfe0.css",
+    "main.js": "/Phase-2-react-project/static/js/main.e75536d0.js",
+    "index.html": "/Phase-2-react-project/index.html",
+    "main.e75536d0.js.map": "/Phase-2-react-project/static/js/main.e75536d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.e75536d0.js"
+  ]
+}
