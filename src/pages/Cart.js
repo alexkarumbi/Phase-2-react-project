@@ -1,6 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../CartContext";
 
+// const value = handleDelivery =(event)=>{
+//   if (event.target.checked){
+  
+    
+//     console.log("hjgjg");
+//   }else{
+//     console.log("error");
+//   }
+  
+//  }
+
+
+
+
+
 const Cart = () => {
   let total = 0;
 
@@ -77,20 +92,9 @@ const Cart = () => {
     setProducts(updatedProductsList);
   };
 
-   let handleDelivery =(event)=>{
-    if (event.target.checked){
-   
-      total +=200
-      
-      
-    
-      console.log("working");
-    }else{
-      console.log("error");
-    }
-    
-   }
 
+
+  
 
 
   const handleOrderNow = () => {
@@ -158,7 +162,7 @@ const Cart = () => {
       <div className="text-right font-bold"> 
       
       
-      <label for="delivery"><input type="checkbox" id="delivery" name="delivery" value = {isChecked} onChange={handleDelivery}>
+      <label for="delivery"><input type="checkbox" id="delivery" name="delivery" value = {isChecked} >
            
       </input> Delivery :For an extra fee of Ksh.200</label>
      
