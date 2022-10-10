@@ -13,13 +13,12 @@ const Navigation = () => {
 
   const { cart } = useContext(CartContext);
 
-  // console.log("butoton", cart);
 
   return (
     <>
       <nav className="container mx-auto flex items-center justify-between py-4 ">
         <Link to="/">
-          <img style={{ height: 45 }} src="/images/logo.png" alt="logo" />
+          <img style={{ height: 45 }} src={require('../images/logo.png')} alt="logo" />
         </Link>
         <ul className="flex items-center">
           <li>
@@ -35,7 +34,8 @@ const Navigation = () => {
                 <span>{cart.totalItems ? cart.totalItems : 0}</span>
                 <img
                   className="ml-2 hover:animate-bounce"
-                  src="/images/cart.png"
+                  
+                  src={require('../images/cart.png')}
                   alt="cart"
                 />
               </div>

@@ -13,13 +13,12 @@ const ProductsList = () => {
       });
   }, []);
 
-  // const { name } = useContext(CartContext);
-
+ 
   return (
     <div className="container mx-auto pb-24">
       <h1 className="text-lg font-bold my-8">
         Products
-        {/* {name} */}
+       
       </h1>
 
       <div className="grid grid-cols-5 my-8 gap-24">

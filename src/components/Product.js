@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext";
 
 const Product = (props) => {
-  // console.log(props);
+  
 
   const [isAdding, setIsAdding] = useState(false);
 

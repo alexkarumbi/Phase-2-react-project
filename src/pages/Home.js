@@ -13,7 +13,7 @@ const Home = () => {
             </button>
           </div>
           <div className="w-1/2">
-            <img className="w-4/5 ml-16 " src="/images/pizza.png" alt="pizza" />
+            <img className="w-4/5 ml-16 " src={require('../images/pizza.png')} alt="pizza" />
           </div>
         </div>
       </div>

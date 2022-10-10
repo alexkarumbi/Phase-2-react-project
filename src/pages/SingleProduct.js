@@ -6,7 +6,7 @@ const SingleProduct = () => {
 
   const params = useParams();
   const history = useNavigate();
-  //   console.log("annasdklmd", product);
+ 
 
   useEffect(() => {
     fetch(`https://ecom-rest-apis.herokuapp.com/api/products/${params._id}`)

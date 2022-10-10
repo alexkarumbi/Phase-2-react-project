@@ -1,21 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../CartContext";
 
-// const value = handleDelivery =(event)=>{
-//   if (event.target.checked){
-  
-    
-//     console.log("hjgjg");
-//   }else{
-//     console.log("error");
-//   }
-  
-//  }
-
-
-
-
-
 const Cart = () => {
   let total = 0;
 
@@ -23,9 +8,8 @@ const Cart = () => {
 
   const [products, setProducts] = useState([]);
 
-  const [priceFetched, setPriceFetched ,isChecked] = useState(false);
- 
-
+  const [priceFetched, setPriceFetched] = useState(false);
+  
   const getSum = (productId, price) => {
     const sum = price * getQty(productId);
     total += sum;
@@ -92,18 +76,10 @@ const Cart = () => {
     setProducts(updatedProductsList);
   };
 
-
-
-  
-
-
   const handleOrderNow = () => {
 
-  
-
-    let location =window.prompt("Please enter location for delivery");
-    
-    window.alert( "Order placed succesfully, it will be delivered to " +location );
+    let location =window.prompt("Enter location");
+    window.alert("Order will be delivered to" +location);
     setProducts([]);
     setCart({});
   };
@@ -141,7 +117,7 @@ const Cart = () => {
                     +
                   </button>
                 </div>
-                <span>Ksh.{getSum(product._id, product.price)}</span>
+                <span>Ksh {getSum(product._id, product.price)}</span>
 
                 <button
                   className="bg-red-500 px-4 py-2 rounded-full leading-none text-white"
@@ -159,16 +135,7 @@ const Cart = () => {
 
       <hr className="my-6" />
 
-      <div className="text-right font-bold"> 
-      
-      
-      <label for="delivery"><input type="checkbox" id="delivery" name="delivery" value = {isChecked} >
-           
-      </input> Delivery :For an extra fee of Ksh.200</label>
-     
-      <p>Grand Total : Ksh {total}</p>
-      
-       </div>
+      <div className="text-right font-bold"> Grand Total : Ksh{total} </div>
       <div className="text-right font-bold mt-6">
         <button
           className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
@@ -176,16 +143,12 @@ const Cart = () => {
         >
           Order Now
         </button>
-         
-        
-      
-        
       </div>
     </div>
   ) : (
     <img
       className="mx-auto w=1/2 mt-12"
-      src="/images/empty-cart.png"
+      src={require('../images/empty-cart.png')}
       alt="emptyCart"
     />
   );
