@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/Phase-2-react-project/static/css/main.31d6cfe0.css",
-    "main.js": "/Phase-2-react-project/static/js/main.e75536d0.js",
+    "main.js": "/Phase-2-react-project/static/js/main.f4479aa7.js",
+    "static/media/pizza.png": "/Phase-2-react-project/static/media/pizza.80b3d1dbd8a2c9f0567b.png",
+    "static/media/empty-cart.png": "/Phase-2-react-project/static/media/empty-cart.621445dd735630479079.png",
     "index.html": "/Phase-2-react-project/index.html",
-    "main.e75536d0.js.map": "/Phase-2-react-project/static/js/main.e75536d0.js.map"
+    "main.f4479aa7.js.map": "/Phase-2-react-project/static/js/main.f4479aa7.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.e75536d0.js"
+    "static/js/main.f4479aa7.js"
   ]
 }
